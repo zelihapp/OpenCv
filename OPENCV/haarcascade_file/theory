@@ -1,0 +1,17 @@
+'''
+kendi haar cascade dosyamizi yapmak icin :
+
+1. Haar Egitici Yönteminin Belirlenmesi
+* Server kurulabilir (ücretli bir yol)
+* Virtual Machine kurulabilir (cok zahmetli)
+** Haar Cascade Trainer kurulabilir
+
+2. Nesnenin Belirlenmesi
+* Algilanmasi amaclanan nesne veya nesnelerin neler olduguna karar verilir
+
+3. Veri Kümesi
+* Amaclanan nesne ile ilgili pozitif ve negatif resimlerden olusan bir dosya
+pozitif algilanmasi amaclanan negatif amaclanmayan
+* Toplu resim indirme programi
+* resim kirpma programi
+'''

@@ -1,0 +1,24 @@
+import cv2
+
+img = cv2.imread("C:\\Users\\zelih\\OneDrive\\Belgeler\\OPENCV\\9.klasor\\contour1.png")
+
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+_,thresh = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
+
+# findContours() -> 3 deger donduruyor ,"_" olan degerleri hic bir zaman kullanmayacaz
+# bu fonksiyona ilk girecegimiz deger thresh degeridir.
+# 2.ve 3. parametre default olarak ekleniyor sinir cizgileri daha dogru bulunsun diye
+contours,_ = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE )
+print(contours)
+
+# koordinatlar bulunduktan sonra bunlara cizim yapacaz bunun icinde drawContours fonksiyonu kullanilir
+# ilk parametresi cizim yapacagimiz resim , ikinci parametre koordinatlar bunlarda contours icinde tutuluyor
+# 3.parametre -1 (0 yaparsak ictekileri cizmez?), 4.parametre renkler ve son parametre de kalinligi gosteriyor
+
+cv2.drawContours(img, contours, -1, (0, 0, 255), 3)
+
+cv2.imshow("contour", img)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
